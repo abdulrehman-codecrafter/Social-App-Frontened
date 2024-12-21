@@ -27,12 +27,8 @@ export default function PostContextProvider(props) {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const result = await axios.get("https://socail-app-backened-production.up.railway.app/posts")
-                console.log('result',result)
+                const result = await axios.get("https://social-app.up.railway.app/posts")
                 const posts = result.data
-                console.log('result->data',posts)
-                // console.log(posts.data)
-                console.log('result->data->data',posts.data)
                 dispatch({ type: 'SET_POSTS', payload: posts.data })
             }
             catch (error) {
